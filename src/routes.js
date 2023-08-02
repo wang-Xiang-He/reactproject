@@ -1,9 +1,11 @@
 
 export const Routes = {
     // pages
-    Presentation: { path: "/" },
-    Users: { path: "/users" }, // add it here
-    DashboardOverview: { path: "/dashboard/overview" },
+    // Presentation: { path: "/" },
+    // DashboardOverview: { path: "/dashboard/overview" },
+    DashboardOverview: { path: "/"},
+    Users: { path: "/users"},
+    Charts: { path: "/charts"},
     Transactions: { path: "/transactions" },
     Settings: { path: "/settings" },
     Upgrade: { path: "/upgrade" },
@@ -11,6 +13,7 @@ export const Routes = {
     Billing: { path: "/examples/billing" },
     Invoice: { path: "/examples/invoice" },
     Signin: { path: "/examples/sign-in" },
+    login: { path: "/login" },
     Signup: { path: "/examples/sign-up" },
     ForgotPassword: { path: "/examples/forgot-password" },
     ResetPassword: { path: "/examples/reset-password" },

@@ -70,6 +70,11 @@
         "POSITION": "Employee",
         "CREATED_AT": "2023-07-30"
       }
+    ],
+
+    "users": [
+      { "id": 1, "username": "123456", "password": "123456" },
+      { "id": 2, "username": "123", "password": "123" }
     ]
   }
   
