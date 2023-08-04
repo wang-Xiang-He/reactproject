@@ -12,6 +12,7 @@ import {
   Dropdown,
   Card,
   Table,
+  Container,
 } from "@themesberg/react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -23,6 +24,8 @@ import {
   faSlidersH,
 } from "@fortawesome/free-solid-svg-icons";
 import ApexChart from "react-apexcharts"; // 引入 ApexChart
+
+import Duallistbox from "./components/duallistbox";
 
 // import users from '../data/users';
 
@@ -180,22 +183,37 @@ const Charts = () => {
       value: "3.47",
     },
     {
-      title: "本月降低碳排 公斤 Co2",
+      title: "本月降低碳排Co2 (公斤)",
       value: "1,769.89",
     },
     {
-      title: "本月減少伐木 株 樹木",
+      title: "本月減少伐木樹木 (株)",
       value: "268.16",
     },
     {
-      title: "本月等同造林 公頃 面積",
+      title: "本月等同造林面積 (公頃)",
       value: "0.17",
     },
     {
-      title: "本月可使用 24小時 30W燈泡",
+      title: "本月可使用30W燈泡 (24小時 )",
       value: "4,829.44",
     },
   ];
+
+  const options = [
+    { label: "Option 1", value: "option1" },
+    { label: "Option 2", value: "option2" },
+    { label: "Option 3", value: "option3" },
+    // 其他選項...
+  ];
+
+
+  const [selectedItems, setSelectedItems] = useState([]);
+
+  // 處理按鈕點擊事件：將所選擇的項目輸出到控制台
+  const handleLogSelectedItems = () => {
+    console.log("所選項目:", selectedItems);
+  };
 
   return (
     <>
@@ -295,27 +313,40 @@ const Charts = () => {
       {/* 新增圖表元件 */}
       <Row className="justify-content-md-center">
         <Col xs={12} md={12}>
-          <Card border="light" className="shadow-sm mb-4">
+          <Card border="light" className="shadow-sm mb-4 ">
+            <Card.Header className="bg-secondary text-center">
+              <h5 className="mb-0">Your Line Chart</h5>
+            </Card.Header>
             <Card.Body>
-              <h5 className="mb-4">Your Line Chart</h5>
               <ApexChart
                 type="area"
                 height={360}
                 series={seriesAreaChart}
                 options={optionsAreaChart}
               />
-              <Row className="mt-4">
+
+              <Row className="mt-4 align-items-center">
                 {additionalInfoData.slice(0, 4).map((info) => (
-                  <Col xs={6} md={3} key={info.title} border="1px solid #dee2e6">
-                    <p className="mb-2">{info.title}</p>
+                  <Col
+                    xs={6}
+                    md={3}
+                    key={info.title}
+                    className="border  p-3 text-center"
+                  >
+                    <p className="mb-2 fw-bold">{info.title}</p>
                     <p>{info.value}</p>
                   </Col>
                 ))}
               </Row>
-              <Row className="mt-4">
+              <Row className=" align-items-center">
                 {additionalInfoData.slice(4).map((info) => (
-                  <Col xs={6} md={3} key={info.title} border="1px solid #dee2e6">
-                    <p className="mb-2">{info.title}</p>
+                  <Col
+                    xs={6}
+                    md={3}
+                    key={info.title}
+                    className="border  p-3 text-center"
+                  >
+                    <p className="mb-2 fw-bold">{info.title}</p>
                     <p>{info.value}</p>
                   </Col>
                 ))}
@@ -328,14 +359,35 @@ const Charts = () => {
       <Row className="justify-content-md-center">
         <Col xs={12} md={12}>
           <Card border="light" className="shadow-sm mb-4">
+            <Card.Header className="bg-secondary text-center">
+              <h5 className="mb-0">Your Line Chart</h5>
+            </Card.Header>
             <Card.Body>
-              <h5 className="mb-4">Your Line Chart</h5>
               <ApexChart
                 type="line"
                 height={360}
                 series={seriesLineChart}
                 options={optionsLineChart}
               />
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+
+      <Row className="justify-content-md-center">
+        <Col xs={12} md={12}>
+          <Card border="light" className="shadow-sm mb-4">
+            <Card.Header className="bg-light text-center">
+              <h5 className="mb-0">Dulist box</h5>
+            </Card.Header>
+            <Card.Body>
+              <Duallistbox
+              options={options}
+              selected={selectedItems}
+              onSelectedChange={setSelectedItems}/>
+              <Row className="mt-4 align-items-center">
+              <Button variant="primary"   onClick={handleLogSelectedItems}>輸出所選項目</Button>
+              </Row>
             </Card.Body>
           </Card>
         </Col>
