@@ -1,99 +1,23 @@
 import React, { useState, useEffect } from "react";
 import {
-  Pagination,
   Breadcrumb,
   Button,
-  ButtonGroup,
   Row,
   Col,
-  InputGroup,
-  Form,
-  Image,
-  Dropdown,
   Card,
-  Table,
-  Container,
 } from "@themesberg/react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
-  faPlus,
-  faCog,
-  faCheck,
-  faSearch,
-  faSlidersH,
 } from "@fortawesome/free-solid-svg-icons";
 import ApexChart from "react-apexcharts"; // 引入 ApexChart
 
-import Duallistbox from "./components/duallistbox";
+import "react-dual-listbox/lib/react-dual-listbox.css";
 
 // import users from '../data/users';
 
 const Charts = () => {
-  const [usersData, setUsersData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [usersPerPage, setUsersPerPage] = useState(5); // 預設每頁顯示 5 筆使用者
-  const [searchKeyword, setSearchKeyword] = useState(""); // 搜尋關鍵字
 
-  useEffect(() => {
-    fetch("http://localhost:3001/people")
-      .then((response) => response.json())
-      .then((data) => {
-        if (data) {
-          setUsersData(data);
-        }
-      })
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
-
-  // 計算總頁數
-  const totalPages = Math.ceil(usersData.length / usersPerPage);
-
-  // 取得所有使用者資料再進行搜尋
-  const getCurrentUsers = () => {
-    let filteredUsers = usersData;
-
-    if (searchKeyword) {
-      filteredUsers = usersData.filter((user) =>
-        user.name.toLowerCase().includes(searchKeyword.toLowerCase())
-      );
-    }
-
-    const indexOfLastUser = currentPage * usersPerPage;
-    const indexOfFirstUser = indexOfLastUser - usersPerPage;
-
-    const usersToDisplay = filteredUsers.slice(
-      indexOfFirstUser,
-      indexOfLastUser
-    );
-
-    // 加入索引
-    const usersWithIndexes = usersToDisplay.map((user, index) => ({
-      ...user,
-      index: indexOfFirstUser + index + 1,
-    }));
-
-    return usersWithIndexes;
-  };
-
-  // 分頁切換
-  const handlePaginationChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
-  // 每頁顯示數量的選項
-  const pageOptions = [3, 5, 8, 10];
-
-  const handleUsersPerPageChange = (event) => {
-    const selectedValue = parseInt(event.target.value, 10);
-    setUsersPerPage(selectedValue);
-    setCurrentPage(1); // 重置當前頁碼為 1
-  };
-
-  const handleSearchInputChange = (event) => {
-    setSearchKeyword(event.target.value);
-    setCurrentPage(1); // 重置當前頁碼為 1
-  };
 
   // 兩條線的數據
   const seriesLineChart = [
@@ -207,193 +131,88 @@ const Charts = () => {
     // 其他選項...
   ];
 
+    return (
+      <>
+        <div className="mb-4 mb-lg-0">
+          <Breadcrumb
+            className="d-none d-md-inline-block"
+            listProps={{ className: "breadcrumb-dark breadcrumb-transparent" }}
+          >
+            <Breadcrumb.Item>
+              <FontAwesomeIcon icon={faHome} />
+            </Breadcrumb.Item>
+            <Breadcrumb.Item>Home</Breadcrumb.Item>
+            <Breadcrumb.Item active>Users List</Breadcrumb.Item>
+          </Breadcrumb>
+          <h4>Charts</h4>
+          <p className="mb-0">Your web analytics dashboard template.</p>
 
-  const [selectedItems, setSelectedItems] = useState([]);
+        </div>
+        {/* 新增圖表元件 */}
+        <Row className="justify-content-md-center">
+          <Col xs={12} md={12}>
+            <Card border="light" className="shadow-sm mb-4 ">
+              <Card.Header className="bg-secondary text-center">
+                <h5 className="mb-0">Your Line Chart</h5>
+              </Card.Header>
+              <Card.Body>
+                <ApexChart
+                  type="area"
+                  height={360}
+                  series={seriesAreaChart}
+                  options={optionsAreaChart}
+                />
 
-  // 處理按鈕點擊事件：將所選擇的項目輸出到控制台
-  const handleLogSelectedItems = () => {
-    console.log("所選項目:", selectedItems);
-  };
-
-  return (
-    <>
-      <div className="mb-4 mb-lg-0">
-        <Breadcrumb
-          className="d-none d-md-inline-block"
-          listProps={{ className: "breadcrumb-dark breadcrumb-transparent" }}
-        >
-          <Breadcrumb.Item>
-            <FontAwesomeIcon icon={faHome} />
-          </Breadcrumb.Item>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item active>Users List</Breadcrumb.Item>
-        </Breadcrumb>
-        <h4>Charts</h4>
-        <p className="mb-0">Your web analytics dashboard template.</p>
-
-        <Row className="justify-content-between align-items-center">
-          <Col xs={9} lg={5} className="d-flex">
-            <InputGroup className="me-2 me-lg-3">
-              <InputGroup.Text>
-                <FontAwesomeIcon icon={faSearch} />
-              </InputGroup.Text>
-              <Form.Control
-                type="text"
-                placeholder="Search"
-                value={searchKeyword}
-                onChange={handleSearchInputChange}
-              />
-            </InputGroup>
-            <Form.Select
-              onChange={handleUsersPerPageChange}
-              value={usersPerPage}
-              className="w-25"
-            >
-              {pageOptions.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </Form.Select>
-          </Col>
-          <Col xs={3} lg={8} className="text-end">
-            <Dropdown as={ButtonGroup} className="me-2">
-              <Dropdown.Toggle
-                split
-                as={Button}
-                variant="link"
-                className="text-dark m-0 p-0"
-              >
-                <span className="icon icon-sm icon-gray">
-                  {/* <FontAwesomeIcon icon={faSlidersH} /> */}
-                </span>
-              </Dropdown.Toggle>
-              <Dropdown.Menu className="dropdown-menu-right">
-                <Dropdown.Item className="fw-bold text-dark">
-                  Show
-                </Dropdown.Item>
-                <Dropdown.Item className="d-flex fw-bold">
-                  10{" "}
-                  <span className="icon icon-small ms-auto">
-                    <FontAwesomeIcon icon={faCheck} />
-                  </span>
-                </Dropdown.Item>
-                <Dropdown.Item className="fw-bold">20</Dropdown.Item>
-                <Dropdown.Item className="fw-bold">30</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            <Dropdown as={ButtonGroup}>
-              <Dropdown.Toggle
-                split
-                as={Button}
-                variant="link"
-                className="text-dark m-0 p-0"
-              >
-                <span className="icon icon-sm icon-gray">
-                  {/* <FontAwesomeIcon icon={faCog} /> */}
-                </span>
-              </Dropdown.Toggle>
-              <Dropdown.Menu className="dropdown-menu-right">
-                <Dropdown.Item className="fw-bold text-dark">
-                  Show
-                </Dropdown.Item>
-                <Dropdown.Item className="d-flex fw-bold">
-                  10{" "}
-                  <span className="icon icon-small ms-auto">
-                    <FontAwesomeIcon icon={faCheck} />
-                  </span>
-                </Dropdown.Item>
-                <Dropdown.Item className="fw-bold">20</Dropdown.Item>
-                <Dropdown.Item className="fw-bold">30</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+                <Row className="mt-4 align-items-center">
+                  {additionalInfoData.slice(0, 4).map((info) => (
+                    <Col
+                      xs={6}
+                      md={3}
+                      key={info.title}
+                      className="border  p-3 text-center"
+                    >
+                      <p className="mb-2 fw-bold">{info.title}</p>
+                      <p>{info.value}</p>
+                    </Col>
+                  ))}
+                </Row>
+                <Row className=" align-items-center">
+                  {additionalInfoData.slice(4).map((info) => (
+                    <Col
+                      xs={6}
+                      md={3}
+                      key={info.title}
+                      className="border  p-3 text-center"
+                    >
+                      <p className="mb-2 fw-bold">{info.title}</p>
+                      <p>{info.value}</p>
+                    </Col>
+                  ))}
+                </Row>
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
-      </div>
-      {/* 新增圖表元件 */}
-      <Row className="justify-content-md-center">
-        <Col xs={12} md={12}>
-          <Card border="light" className="shadow-sm mb-4 ">
-            <Card.Header className="bg-secondary text-center">
-              <h5 className="mb-0">Your Line Chart</h5>
-            </Card.Header>
-            <Card.Body>
-              <ApexChart
-                type="area"
-                height={360}
-                series={seriesAreaChart}
-                options={optionsAreaChart}
-              />
 
-              <Row className="mt-4 align-items-center">
-                {additionalInfoData.slice(0, 4).map((info) => (
-                  <Col
-                    xs={6}
-                    md={3}
-                    key={info.title}
-                    className="border  p-3 text-center"
-                  >
-                    <p className="mb-2 fw-bold">{info.title}</p>
-                    <p>{info.value}</p>
-                  </Col>
-                ))}
-              </Row>
-              <Row className=" align-items-center">
-                {additionalInfoData.slice(4).map((info) => (
-                  <Col
-                    xs={6}
-                    md={3}
-                    key={info.title}
-                    className="border  p-3 text-center"
-                  >
-                    <p className="mb-2 fw-bold">{info.title}</p>
-                    <p>{info.value}</p>
-                  </Col>
-                ))}
-              </Row>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-
-      <Row className="justify-content-md-center">
-        <Col xs={12} md={12}>
-          <Card border="light" className="shadow-sm mb-4">
-            <Card.Header className="bg-secondary text-center">
-              <h5 className="mb-0">Your Line Chart</h5>
-            </Card.Header>
-            <Card.Body>
-              <ApexChart
-                type="line"
-                height={360}
-                series={seriesLineChart}
-                options={optionsLineChart}
-              />
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-
-      <Row className="justify-content-md-center">
-        <Col xs={12} md={12}>
-          <Card border="light" className="shadow-sm mb-4">
-            <Card.Header className="bg-light text-center">
-              <h5 className="mb-0">Dulist box</h5>
-            </Card.Header>
-            <Card.Body>
-              <Duallistbox
-              options={options}
-              selected={selectedItems}
-              onSelectedChange={setSelectedItems}/>
-              <Row className="mt-4 align-items-center">
-              <Button variant="primary"   onClick={handleLogSelectedItems}>輸出所選項目</Button>
-              </Row>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </>
-  );
-};
+        <Row className="justify-content-md-center">
+          <Col xs={12} md={12}>
+            <Card border="light" className="shadow-sm mb-4">
+              <Card.Header className="bg-secondary text-center">
+                <h5 className="mb-0">Your Line Chart</h5>
+              </Card.Header>
+              <Card.Body>
+                <ApexChart
+                  type="line"
+                  height={360}
+                  series={seriesLineChart}
+                  options={optionsLineChart}
+                />
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </>
+    );
+  };
 
 export default Charts;

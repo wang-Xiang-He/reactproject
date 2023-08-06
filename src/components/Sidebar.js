@@ -4,7 +4,7 @@ import SimpleBar from 'simplebar-react';
 import { useLocation } from "react-router-dom";
 import { CSSTransition } from 'react-transition-group';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBook, faBoxOpen, faChartPie, faCog, faFileAlt, faHandHoldingUsd, faSignOutAlt, faTable, faTimes, faCalendarAlt, faMapPin, faInbox, faRocket, faUsers, faChartBar } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faBook, faBoxOpen, faChartPie, faCog, faFileAlt, faHandHoldingUsd, faSignOutAlt, faTable, faTimes, faCalendarAlt, faMapPin, faInbox, faRocket, faUsers, faChartBar, faDownload } from "@fortawesome/free-solid-svg-icons";
 import { Nav, Badge, Image, Button, Dropdown, Accordion, Navbar } from '@themesberg/react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -77,8 +77,13 @@ export default (props = {}) => {
           <span className="navbar-toggler-icon" />
         </Navbar.Toggle>
       </Navbar>
+
+
+
       <CSSTransition timeout={300} in={show} classNames="sidebar-transition">
+
         <SimpleBar className={`collapse ${showClass} sidebar d-md-block bg-primary text-white`}>
+
           <div className="sidebar-inner px-4 pt-3">
             <div className="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
               <div className="d-flex align-items-center">
@@ -97,12 +102,14 @@ export default (props = {}) => {
               </Nav.Link>
             </div>
             <Nav className="flex-column pt-3 pt-md-0">
+
               {/* <NavItem title="Volt React" link={Routes.Presentation.path} image={ReactHero} /> */}
 
               <NavItem title="Overview" link={Routes.DashboardOverview.path} icon={faChartPie} />
               {/* <NavItem external title="Messages" link="https://demo.themesberg.com/volt-pro-react/#/messages" target="_blank" badgeText="Pro" icon={faInbox} /> */}
               <NavItem title="Transactions" icon={faHandHoldingUsd} link={Routes.Transactions.path} />
               <NavItem title="Users" icon={faUsers} link={Routes.Users.path} />
+              <NavItem title="Reports" icon={faDownload} link={Routes.Reports.path} />
               <NavItem title="Charts" icon={faChartBar} link={Routes.Charts.path} />
               <NavItem title="Settings" icon={faCog} link={Routes.Settings.path} />
               {/* <NavItem external title="Calendar" link="https://demo.themesberg.com/volt-pro-react/#/calendar" target="_blank" badgeText="Pro" icon={faCalendarAlt} /> */}
@@ -139,7 +146,7 @@ export default (props = {}) => {
                 <NavItem title="Accordion" link={Routes.Accordions.path} />
                 <NavItem title="Alerts" link={Routes.Alerts.path} />
                 <NavItem title="Badges" link={Routes.Badges.path} />
-                {/* <NavItem external title="Widgets" link="https://demo.themesberg.com/volt-pro-react/#/components/widgets" target="_blank" badgeText="Pro" /> */}
+                <NavItem external title="Widgets" link={Routes.Widgets.path} />
                 <NavItem title="Breadcrumbs" link={Routes.Breadcrumbs.path} />
                 <NavItem title="Buttons" link={Routes.Buttons.path} />
                 <NavItem title="Forms" link={Routes.Forms.path} />
@@ -160,6 +167,7 @@ export default (props = {}) => {
           </div>
         </SimpleBar>
       </CSSTransition>
+
     </>
   );
 };

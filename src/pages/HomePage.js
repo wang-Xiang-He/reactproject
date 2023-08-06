@@ -9,6 +9,7 @@ import DashboardOverview from "./dashboard/DashboardOverview";
 import Transactions from "./Transactions";
 import Users from "./Users";
 import Charts from "./Charts";
+import Reports from "./Reports";
 import Settings from "./Settings";
 import BootstrapTables from "./tables/BootstrapTables";
 import Signin from "./examples/Signin";
@@ -169,6 +170,7 @@ export default () => (
     <PrivateRouteWithSidebar exact path={Routes.Transactions.path} component={Transactions} />
     <PrivateRouteWithSidebar exact path={Routes.Users.path} component={Users} />
     <PrivateRouteWithSidebar exact path={Routes.Charts.path} component={Charts} />
+    <PrivateRouteWithSidebar exact path={Routes.Reports.path} component={Reports} />
     <PrivateRouteWithSidebar exact path={Routes.Settings.path} component={Settings} />
     <PrivateRouteWithSidebar exact path={Routes.BootstrapTables.path} component={BootstrapTables} />
 
