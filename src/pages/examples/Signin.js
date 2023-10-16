@@ -37,7 +37,7 @@ const Login = () => {
         if (data.success) {
           // 將 TOKEN 存儲在瀏覽器的 localStorage 中
           localStorage.setItem('token', data.token);
-          
+          localStorage.setItem('user', data.user);
 
           // 根據返回的值更改 isAuthenticated
           setIsAuthenticated(data.success);

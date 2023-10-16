@@ -90,8 +90,9 @@ export const CircleChart = (props) => {
 };
 
 export const BarChart = (props) => {
-  const { labels = [], series = [], chartClassName = "ct-golden-section" } = props;
+  const { colors = [],labels = [], series = [], chartClassName = "ct-golden-section" } = props;
   const data = { labels, series };
+
 
   const options = {
     low: 0,
@@ -103,7 +104,8 @@ export const BarChart = (props) => {
       showGrid: false,
       showLabel: false,
       offset: 0
-    }
+    },
+    seriesBarColors: colors
   };
 
   const plugins = [

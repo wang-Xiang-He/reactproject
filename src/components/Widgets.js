@@ -5,12 +5,46 @@ import { faAngleDown, faAngleUp, faChartArea, faChartBar, faChartLine, faFlagUsa
 import { faAngular, faBootstrap, faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
 import { Col, Row, Card, Image, Button, ListGroup, ProgressBar } from '@themesberg/react-bootstrap';
 import { CircleChart, BarChart, SalesValueChart, SalesValueChartphone } from "./Charts";
+import { faBolt } from "@fortawesome/free-solid-svg-icons";
 
 import Profile1 from "../assets/img/team/profile-picture-1.jpg";
 import ProfileCover from "../assets/img/profile-cover.jpg";
 
 import teamMembers from "../data/teamMembers";
 
+
+export const KwValueWidget = (props) => {
+  const { title, value, PR } = props;
+  const percentageIcon =  PR < 0 ? faAngleDown : faAngleUp;
+  const percentageColor =  PR < 0 ? "text-danger" : "text-success";
+
+  return (
+    <Card className="bg-secondary-alt shadow-sm">
+      <Card.Header className="d-flex flex-row align-items-center flex-0">
+        <div className="d-block">
+          <h1 className="fw-normal mb-2">
+            {title}
+          </h1>
+          <h3><FontAwesomeIcon icon={faBolt} />{value}</h3>
+          <small className="fw-bold mt-2">
+            <span className="me-2">Yesterday</span>
+            <FontAwesomeIcon icon={percentageIcon} className={`${percentageColor} me-1`} />
+            <span className={percentageColor}>
+              {PR}%
+            </span>
+          </small>
+        </div>
+        <div className="d-flex ms-auto">
+          <Button variant="secondary" size="sm" className="me-2">Month</Button>
+          <Button variant="primary" size="sm" className="me-3">Week</Button>
+        </div>
+      </Card.Header>
+      <Card.Body className="p-2">
+        <SalesValueChart />
+      </Card.Body>
+    </Card>
+  );
+};
 
 export const ProfileCardWidget = () => {
   return (
@@ -85,12 +119,12 @@ export const CounterWidget = (props) => {
               <h5>{category}</h5>
               <h3 className="mb-1">{title}</h3>
             </div>
-            <small>{period}, <FontAwesomeIcon icon={faGlobeEurope} size="xs" /> WorldWide</small>
+            <small>{period}, <FontAwesomeIcon icon={faGlobeEurope} size="xs" /> Taiwan</small>
             <div className="small mt-2">
               <FontAwesomeIcon icon={percentageIcon} className={`${percentageColor} me-1`} />
               <span className={`${percentageColor} fw-bold`}>
                 {percentage}%
-              </span> Since last month
+              </span> 相較去年
             </div>
           </Col>
         </Row>
@@ -130,6 +164,7 @@ export const BarChartWidget = (props) => {
   const { title, value, percentage, data = [] } = props;
   const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const series = data.map(d => d.value);
+  const colors = data.map(d => d.color);
   const percentageIcon = percentage < 0 ? faAngleDown : faAngleUp;
   const percentageColor = percentage < 0 ? "text-danger" : "text-success";
 
@@ -149,14 +184,13 @@ export const BarChartWidget = (props) => {
         <div className="d-block ms-auto">
           {data.map(d => (
             <div key={`bar-element-${d.id}`} className="d-flex align-items-center text-end mb-2">
-              <span className={`shape-xs rounded-circle bg-${d.color} me-2`} />
-              <small className="fw-normal">{d.label}</small>
+              <span className={`shape-xs rounded-circle bg-${d.color} me-2`} /><small className="fw-normal">{d.label}</small>
             </div>
           ))}
         </div>
       </Card.Body>
       <Card.Body className="p-2">
-        <BarChart labels={labels} series={series} />
+        <BarChart labels={labels} series={series}  colors={colors}/>
       </Card.Body>
     </Card>
   );
@@ -177,11 +211,11 @@ export const TeamMembersWidget = () => {
     return (
       <ListGroup.Item className="px-0">
         <Row className="align-items-center">
-          <Col className="col-auto">
+          {/* <Col className="col-auto">
             <a href="#top" className="user-avatar">
               <Image src={image} className="rounded-circle" />
             </a>
-          </Col>
+          </Col> */}
           <Col className="ms--2">
             <h4 className="h6 mb-0">
               <a href="#!">{name}</a>
@@ -202,7 +236,7 @@ export const TeamMembersWidget = () => {
   return (
     <Card border="light" className="shadow-sm">
       <Card.Header className="border-bottom border-light d-flex justify-content-between">
-        <h5 className="mb-0">Team members</h5>
+        <h5 className="mb-0">案場狀態</h5>
         <Button variant="secondary" size="sm">See all</Button>
       </Card.Header>
       <Card.Body>
@@ -302,6 +336,10 @@ export const RankingWidget = () => {
     </Card>
   );
 };
+
+
+
+
 
 export const SalesValueWidget = (props) => {
   const { title, value, percentage } = props;

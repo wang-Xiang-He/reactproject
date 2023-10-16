@@ -13,7 +13,7 @@ ReactDOM.render(
   <AuthProvider>
     <HashRouter>
       {/* 其他組件 */}
-      {/* <ScrollToTop/> */}
+      <ScrollToTop/>
       <HomePage/>
     </HashRouter>
   </AuthProvider>,

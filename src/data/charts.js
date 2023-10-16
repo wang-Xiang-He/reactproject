@@ -1,15 +1,17 @@
 
-import { faDesktop, faMobileAlt, faTabletAlt } from '@fortawesome/free-solid-svg-icons';
+import { faDesktop, faMobileAlt, faTabletAlt,faBolt } from '@fortawesome/free-solid-svg-icons';
 
 const trafficShares = [
-    { id: 1, label: "Desktop", value: 60, color: "secondary", icon: faDesktop },
-    { id: 2, label: "Mobile Web", value: 30, color: "primary", icon: faMobileAlt },
-    { id: 3, label: "Tablet Web", value: 10, color: "tertiary", icon: faTabletAlt }
+    { id: 1, label: "北部", value: 50, color: "secondary", icon: faBolt },
+    { id: 2, label: "中部", value: 30, color: "primary", icon: faBolt },
+    { id: 3, label: "南部", value: 10, color: "tertiary", icon: faBolt },
+    { id: 4, label: "其他", value: 10, color: "quaternary", icon: faBolt },
 ];
 
 const totalOrders = [
-    { id: 1, label: "July", value: [1, 5, 2, 5, 4, 3], color: "primary" },
-    { id: 2, label: "August", value: [2, 3, 4, 8, 1, 2], color: "secondary" }
+    { id: 1, label: "北區", value: [1, 2, 3, 4, 5, 6], color: "tertiary" },
+    { id: 2, label: "南區", value: [2, 3, 4, 5, 6, 7], color: "secondary" },
+    { id: 3, label: "中區", value: [2.5, 3.5, 4.5, 5.5, 6.5, 7.5], color: "primary" }
 ];
 
 export {

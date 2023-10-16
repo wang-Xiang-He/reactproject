@@ -1,5 +1,5 @@
 
-import { faCalendarCheck, faComment } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarCheck, faComment ,faXmark,faCircle,faExclamationTriangle} from '@fortawesome/free-solid-svg-icons';
 
 import Profile1 from "../assets/img/team/profile-picture-1.jpg"
 import Profile2 from "../assets/img/team/profile-picture-2.jpg"
@@ -10,33 +10,33 @@ export default [
     {
         "id": 1,
         "image": Profile1,
-        "name": "Christopher Wood",
+        "name": "北區案場1",
         "statusKey": "online",
-        "icon": faCalendarCheck,
-        "btnText": "Invite"
+        "icon": faCircle,
+        "btnText": "Message"
     },
     {
         "id": 2,
         "image": Profile2,
-        "name": "Jose Leos",
-        "statusKey": "inMeeting",
-        "icon": faComment,
+        "name": "北區案場2",
+        "statusKey": "pause",
+        "icon": faExclamationTriangle,
         "btnText": "Message"
     },
     {
         "id": 3,
         "image": Profile3,
-        "name": "Bonnie Green",
+        "name": "中區案場1",
         "statusKey": "offline",
-        "icon": faCalendarCheck,
-        "btnText": "Invite"
+        "icon": faXmark,
+        "btnText": "Message"
     },
     {
         "id": 4,
         "image": Profile4,
-        "name": "Neil Sims",
+        "name": "南區案場1",
         "statusKey": "online",
-        "icon": faComment,
+        "icon": faCircle,
         "btnText": "Message"
     }
 ]

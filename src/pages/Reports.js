@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DualListBox from "react-dual-listbox";
 import "react-dual-listbox/lib/react-dual-listbox.css";
 import {
+  Modal, 
   Breadcrumb,
   Button,
   Row,
@@ -17,11 +18,11 @@ import {
 import "react-dual-listbox/lib/react-dual-listbox.css";
 
 const Duallist = () => {
-  const [selected, setSelected] = useState([{ value: "one" }]);
+  const [selected, setSelected] = useState([]);
   const options = [
-    { label: "Option 1", value: "option1" },
-    { label: "Option 2", value: "option2" },
-    { label: "Option 3", value: "option3" },
+    { label: "Option 1", value: "1" },
+    { label: "Option 2", value: "2" },
+    { label: "Option 3", value: "3" },
     // Other options...
   ];
 
@@ -29,11 +30,53 @@ const Duallist = () => {
     setSelected(selected);
   };
 
-  // Handle button click event: log selected items to console
-  const handleLogSelectedItems = () => {
-    console.log("所選項目:", selected);
-  };
+  const [errorModalVisible, setErrorModalVisible] = useState(false);
+  const [errorText, setErrorText] = useState("");
 
+  const handleLogSelectedItems = () => {
+    if (selected.length === 0) {
+      setErrorText("請選擇至少一個選項");
+      setErrorModalVisible(true);
+      return;
+    }
+    console.log("所選項目:", selected);
+  
+    const requestData = { selected_values: selected };
+  
+    fetch("http://10.3.50.104:3001/download/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(requestData),
+    })
+      .then(response => {
+        if (response.ok) {
+          console.log("已成功發送選項到服務器");
+          return response.blob(); // 將響應體作為 Blob 對象返回
+        } else {
+          console.error("服務器響應異常:", response.statusText);
+          setErrorText("服務器響應異常: " + response.statusText);
+          setErrorModalVisible(true);
+        }
+      })
+      .then(blob => {
+        // 創建一個鏈接並設置文件名，觸發下載
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = url;
+        a.download = "data.csv";
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+      })
+      .catch(error => {
+        console.error("發送選項時出現錯誤:", error);
+        setErrorText("發送選項時出現錯誤: " + error);
+        setErrorModalVisible(true);
+      });
+  };
   return (
     <>
      <div className="mb-4 mb-lg-0">
@@ -69,6 +112,22 @@ const Duallist = () => {
       </Row>
     </Card>
     </Row>
+    <Modal
+        as={Modal.Dialog}
+        centered
+        show={errorModalVisible}
+        onHide={() => setErrorModalVisible(false)}
+      >
+        <Modal.Header>
+          <Modal.Title>Error</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{errorText}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setErrorModalVisible(false)}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
     </>
   );

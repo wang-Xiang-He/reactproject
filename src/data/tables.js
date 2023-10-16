@@ -11,11 +11,11 @@ import ItalyFlag from '../assets/img/flags/italy.svg';
 
 
 const pageVisits = [
-    { id: 1, views: 4.525, returnValue: 255, bounceRate: 42.55, pageName: "/demo/admin/index.html" },
-    { id: 2, views: 2.987, returnValue: 139, bounceRate: -43.52, pageName: "/demo/admin/forms.html" },
-    { id: 3, views: 2.844, returnValue: 124, bounceRate: -32.35, pageName: "/demo/admin/util.html" },
-    { id: 4, views: 1.220, returnValue: 55, bounceRate: 15.78, pageName: "/demo/admin/validation.html" },
-    { id: 5, views: 505, returnValue: 3, bounceRate: -75.12, pageName: "/demo/admin/modals.html" }
+    { id: 1, views: "3528 kwh", returnValue: "NTD 255,000", bounceRate: 42.55, pageName: "北區案場1" },
+    { id: 2, views: "1782 kwh", returnValue: "NTD 139,000", bounceRate: -43.52, pageName: "北區案場2" },
+    { id: 3, views: "2844 kwh", returnValue: "NTD 124,000", bounceRate: -32.35, pageName: "中區案場1" },
+    { id: 4, views: "1220 kwh", returnValue: "NTD 55,000", bounceRate: 15.78, pageName: "中區案場2" },
+    { id: 5, views: "1505 kwh", returnValue: "NTD 345,000", bounceRate: -75.12, pageName: "南區案場1" }
 ];
 
 const pageTraffic = [

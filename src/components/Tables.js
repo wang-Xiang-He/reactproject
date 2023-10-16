@@ -48,7 +48,7 @@ export const PageVisitsTable = () => {
       <Card.Header>
         <Row className="align-items-center">
           <Col>
-            <h5>Page visits</h5>
+            <h5>案場列表</h5>
           </Col>
           <Col className="text-end">
             <Button variant="secondary" size="sm">See all</Button>
@@ -58,10 +58,10 @@ export const PageVisitsTable = () => {
       <Table responsive className="align-items-center table-flush">
         <thead className="thead-light">
           <tr>
-            <th scope="col">Page name</th>
-            <th scope="col">Page Views</th>
-            <th scope="col">Page Value</th>
-            <th scope="col">Bounce rate</th>
+            <th scope="col">地區</th>
+            <th scope="col">累計發電量(週)</th>
+            <th scope="col">累計發電金額</th>
+            <th scope="col">發電量升降百分比(週)</th>
           </tr>
         </thead>
         <tbody>
