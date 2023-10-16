@@ -1,4 +1,4 @@
-# [ React + Bootstrap 5 開發 Dashboard]
+# [ React + Bootstrap 5 開發 太陽能案場監控 Dashboard]
 <!-- (https://demo.themesberg.com/volt-react-dashboard) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fthemesberg%2Fvolt-react-dashboard&via=themesberg&text=Check%20out%20this%20open%20source%20React%20Dashboard) -->
 
 <!-- [![version](https://img.shields.io/npm/v/@themesberg/volt-react-dashboard)](https://www.npmjs.com/package/@themesberg/volt-react-dashboard)
@@ -6,9 +6,9 @@
 [![GitHub issues open](https://img.shields.io/github/issues/themesberg/volt-react-dashboard.svg)](https://github.com/themesberg/volt-react-dashboard/issues?q=is%3Aopen+is%3Aissue)
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/themesberg/volt-react-dashboard.svg)](https://github.com/themesberg/volt-react-dashboard/issues?q=is%3Aissue+is%3Aclosed) -->
 
-[![ React Dashboard Bootstrap 5](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-react-dashboard/thumbnail.png)](https://demo.themesberg.com/volt-react-dashboard)
+[![ React Dashboard Bootstrap 5](https://www.canva.com/design/DAFxZn1jSYU/c1EBk5IqeiEz27tuaQMnbg/watch?utm_content=DAFxZn1jSYU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)]
 
-Volt React is a free and open source admin dashboard template built in React.js and based on the latest version of the Bootstrap 5 CSS framework. It features over 100 UI elements, plugins, and example based built with React components.
+此專案以 Volt React 免費模板為基礎開發，開發包含註冊、登陸、案場資訊總覽、數據可視畫、資料下載 等頁面功能
 
 ## Powered by React.js
 
