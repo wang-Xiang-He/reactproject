@@ -1,80 +1,15 @@
-# [Volt React Dashboard Bootstrap 5](https://demo.themesberg.com/volt-react-dashboard) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fthemesberg%2Fvolt-react-dashboard&via=themesberg&text=Check%20out%20this%20open%20source%20React%20Dashboard)
+# [ React + Bootstrap 5 開發 太陽能案場監控 Dashboard]
+<!-- (https://demo.themesberg.com/volt-react-dashboard) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2Fthemesberg%2Fvolt-react-dashboard&via=themesberg&text=Check%20out%20this%20open%20source%20React%20Dashboard) -->
 
-[![version](https://img.shields.io/npm/v/@themesberg/volt-react-dashboard)](https://www.npmjs.com/package/@themesberg/volt-react-dashboard)
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
-[![GitHub issues open](https://img.shields.io/github/issues/themesberg/volt-react-dashboard.svg)](https://github.com/themesberg/volt-react-dashboard/issues?q=is%3Aopen+is%3Aissue)
-[![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/themesberg/volt-react-dashboard.svg)](https://github.com/themesberg/volt-react-dashboard/issues?q=is%3Aissue+is%3Aclosed)
+# 頁面總覽
+![ React Dashboard Bootstrap 5](https://drive.google.com/uc?export=view&id=1oiHMbc9uF_NppTTVDQKBPJsJq4RuBxDS)
 
-[![Volt React Dashboard Bootstrap 5](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-react-dashboard/thumbnail.png)](https://demo.themesberg.com/volt-react-dashboard)
-
-Volt React is a free and open source admin dashboard template built in React.js and based on the latest version of the Bootstrap 5 CSS framework. It features over 100 UI elements, plugins, and example based built with React components.
-
-## Powered by React.js
-
-Volt React is an extension of the popular [react-bootstrap](https://react-bootstrap.github.io/) library and it is based on the newest version of Bootstrap 5. 
-
-## Data-driven
-
-This library has been built using a data driven methodology, meaning that a large part of data, such as tasks, messages, user notifications are passed to the components as an array of objects. This will make it easy to connect the UI interface with any back-end API.
-
-## Bootstrap 5
-
-This library is based on the latest version of the [Bootstrap 5 CSS framework](https://getbootstrap.com/) which brought many improvements, such as [dropping dependency on jQuery](https://themesberg.com/blog/tutorial/bootstrap-5-tutorial), introducing RTL support, the utility API and many other style and markup improvements.
-
-## Over 100 React Components
-
-Volt React included over 100 React UI elements such as buttons, form elements, alerts, modals, tabs, navigation bars, date pickers, and many more. They are all custom styled by professional designers as an extension of the base Bootstrap elements using Sass variables, mixins, and custom markup.
-
-## 10 Example Dashboard Pages
-
-Get started with 10 beautiful example pages for a dashboard which is based on the most popular dashboard template written in Bootstrap 5, called [Volt Dashboard](https://github.com/themesberg/volt-bootstrap-5-dashboard).
-
-## Getting Started and live code editor
-
-Every component, plugin and getting started is thoroughly documented on our [online documentation](https://demo.themesberg.com/volt-react-dashboard/#/documentation/quick-start).
-
-## Tutorial
-
-We also [wrote a tutorial](https://themesberg.com/blog/tutorial/react-dashboard) on how you can install the project, explore the UI elements, create a new page, customize the Sass variables and upload the production code to the server.
-
-## Workflow
-
-This product is built using the following widely used technologies:
-
-- React.js front-end library
-- Bootstrap 5 CSS Framework
-- Sass preprocessing language
-- NPM & Yarn
-
-## Table of Contents
-
-* [Version](#versions)
-* [Demo](#demo)
-* [Quick Start](#quick-start)
-* [Documentation](#documentation)
-* [File Structure](#file-structure)
-* [Browser Support](#browser-support)
-* [Resources](#resources)
-* [Upgrade to PRO](#upgrade-to-pro)
-* [Reporting Issues](#reporting-issues)
-* [Technical Support or Questions](#technical-support-or-questions)
-* [Licensing](#licensing)
-* [Useful Links](#useful-links)
+此專案以 Volt React 免費模板為基礎開發，開發包含註冊、登陸、案場資訊總覽、數據可視畫、資料下載 等頁面功能
 
 
-## Versions
-
-[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/html-logo.jpg?raw=true" width="60" height="60" />](https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/react-logo.jpg?raw=true" width="60" height="60" />](https://themesberg.com/product/dashboard/volt-react)[<img src="https://themesberg.s3.us-east-2.amazonaws.com/public/github/technology/laravel-logo.jpeg" width="60" height="60" />](https://themesberg.com/product/laravel/volt-admin-dashboard-template).
-
-| HTML | React  |
-| --- | ---  |
-| [![Volt Bootstrap 5 Dashboard HTML](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-bootstrap-5-dashboard/volt-bootstrap-5-dashboard-preview.jpg)](https://github.com/themesberg/volt-bootstrap-5-dashboard) | [![Volt React Dashboard](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-react-dashboard/thumbnail.png)](https://demo.themesberg.com/volt-react-dashboard/)
-
-## Demo
-
-| Dashboard | Transactions | Settings | Forms |
+| Dashboard | Users | Charts | Report Download|
 | --- | --- | --- | --- |
-| [![Dashboard](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-react-dashboard/github/overview.jpg)](https://demo.themesberg.com/volt-react-dashboard/#/dashboard/overview) | [![Transactions](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-react-dashboard/github/transactions.jpg)](https://demo.themesberg.com/volt-react-dashboard/#/transactions) | [![Settings](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-react-dashboard/github/settings.jpg)](https://demo.themesberg.com/volt-react-dashboard/#/settings) | [![Tables](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-react-dashboard/github/tables.jpg)](https://demo.themesberg.com/volt-react-dashboard/#/tables/bootstrap-tables)
+| [![Dashboard](https://drive.google.com/uc?export=view&id=1G485Udbx4tEp3I9njRgx14u5u0tTVyjj)](https://drive.google.com/uc?export=view&id=1G485Udbx4tEp3I9njRgx14u5u0tTVyjj) | [![Users](https://drive.google.com/uc?export=view&id=15grKxOOZMypbWeHpLsUflluR3cW0Kq68)](https://drive.google.com/uc?export=view&id=15grKxOOZMypbWeHpLsUflluR3cW0Kq68) | [![Charts](https://drive.google.com/uc?export=view&id=1ScWkX-T3-peU_w7aBdmWaNYc3cUdNT7S)](https://drive.google.com/uc?export=view&id=1ScWkX-T3-peU_w7aBdmWaNYc3cUdNT7S) | [![Report Download](15SuWJ1Oswowse-NFWE0gwdtLPatznlT)](15SuWJ1Oswowse-NFWE0gwdtLPatznlT)
 
 | Sign in | Sign up | Forgot password | Reset password |
 | --- | --- | --- | --- |

@@ -103,17 +103,17 @@ export default () => {
                 <Col xs={12} className="mb-4">
                   <BarChartWidget
                     title="區域發電量比較"
-                    value={"南>中>北"}
+                    value={"南區>中區>北區"}
                     percentage={18.2}
                     data={totalOrders} />
                 </Col>
 
                 <Col xs={12} className="px-0 mb-4">
-                  <RankingWidget />
+                  {/* <RankingWidget /> */}
                 </Col>
 
                 <Col xs={12} className="px-0">
-                  <AcquisitionWidget />
+                  {/* <AcquisitionWidget /> */}
                 </Col>
               </Row>
             </Col>

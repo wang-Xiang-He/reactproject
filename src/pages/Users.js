@@ -4,6 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faPlus, faCog, faCheck, faSearch, faSlidersH } from '@fortawesome/free-solid-svg-icons';
 // import users from '../data/users';
 
+import ProfilePicture from "../assets/img/team/user.jpg";
+import Wang from "../assets/img/team/qwert.JPG";
+
 const Users = () => {
     const [usersData, setUsersData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -167,7 +170,7 @@ const Users = () => {
                                             <td>{u.index}</td>
                                             <td>
                                                 <Card.Link className="d-flex align-items-center">
-                                                    <Image src={u.image} className="user-avatar rounded-circle me-3" />
+                                                    <Image src={u.id==0?Wang:ProfilePicture} className="user-avatar rounded-circle me-3" />
                                                     <div className="d-block">
                                                         <span className="fw-bold">{u.name}</span>
                                                     </div>

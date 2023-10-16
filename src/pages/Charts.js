@@ -7,7 +7,7 @@ import {
   Card,
 } from "@themesberg/react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faHome ,faBolt,faTree} from "@fortawesome/free-solid-svg-icons";
 import ApexChart from "react-apexcharts"; // 引入 ApexChart
 
 import "react-dual-listbox/lib/react-dual-listbox.css";
@@ -96,13 +96,18 @@ const Charts = () => {
     },
     series: [
       {
-        name: "Clients",
+        name: "南區",
         data: [120, 160, 200, 470, 420, 150, 470, 750, 650, 190, 140],
         // color: '#FF5733' // 指定 Clients 線的顏色
       },
       {
-        name: "Sales",
-        data: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550],
+        name: "中區",
+        data: [80, 110, 90, 220, 350, 70, 230, 60, 50, 200, 60],
+        // color: '#3366FF' // 指定 Sales 線的顏色
+      },
+      {
+        name: "北區",
+        data: [30, 70, 95, 100, 210, 130, 150, 90, 70, 15, 20],
         // color: '#3366FF' // 指定 Sales 線的顏色
       },
     ],
@@ -164,7 +169,7 @@ const Charts = () => {
       yaxis: [
         {
           title: {
-            text: "Clients",
+            text: "",
           },
         },
         // {
@@ -177,26 +182,26 @@ const Charts = () => {
     },
     series: [
       {
-        name: "Clients",
+        name: "北區案場1-發電量趨勢圖",
         type: "line",
-        data: [120, 160, 200, 470, 420, 150, 470, 750, 650, 190, 140],
+        data: [320, 660, 500, 170, 420, 350, 570, 250, 850, 180, 105],
       },
       {
-        name: "Clients2",
+        name: "北區案場1-發電量面積",
         type: "area",
         data: [320, 660, 500, 170, 420, 350, 570, 250, 850, 180, 105],
       },
       {
-        name: "Sales",
+        name: "北區案場1-發電量柱狀圖",
         type: "bar",
-        data: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550],
+        data: [320, 660, 500, 170, 420, 350, 570, 250, 850, 180, 105],
         yAxisIndex: 1,
       },
       {
-        name: "Sales2",
-        type: "bar",
-        data: [50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550],
-        yAxisIndex: 1,
+        // name: "北區案場1-發電量柱狀圖",
+        // type: "bar",
+        // data: [320, 660, 500, 170, 420, 350, 570, 250, 850, 180, 105],
+        // yAxisIndex: 1,
       },
     ],
   });
@@ -212,7 +217,7 @@ const Charts = () => {
             <FontAwesomeIcon icon={faHome} />
           </Breadcrumb.Item>
           <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item active>Users List</Breadcrumb.Item>
+          <Breadcrumb.Item active>Charts</Breadcrumb.Item>
         </Breadcrumb>
         <h4>Charts</h4>
         <p className="mb-0">Your web analytics dashboard template.</p>
@@ -222,7 +227,7 @@ const Charts = () => {
         <Col xs={12} md={12}>
           <Card border="light" className="shadow-sm mb-4 ">
             <Card.Header className="bg-secondary text-center">
-              <h5 className="mb-0">Your Line Chart</h5>
+              <h5 className="mb-0">本月發電量趨勢圖</h5>
             </Card.Header>
             <Card.Body>
               <ApexChart
@@ -240,7 +245,8 @@ const Charts = () => {
                     key={info.title}
                     className="border  p-3 text-center"
                   >
-                    <p className="mb-2 fw-bold">{info.title}</p>
+                    
+                    <p className="mb-2 fw-bold"><FontAwesomeIcon icon={faBolt} />{info.title}</p>
                     <p>{info.value}</p>
                   </Col>
                 ))}
@@ -253,7 +259,7 @@ const Charts = () => {
                     key={info.title}
                     className="border  p-3 text-center"
                   >
-                    <p className="mb-2 fw-bold">{info.title}</p>
+                    <p className="mb-2 fw-bold"><FontAwesomeIcon icon={faTree} />{info.title}</p>
                     <p>{info.value}</p>
                   </Col>
                 ))}
@@ -267,7 +273,7 @@ const Charts = () => {
         <Col xs={12} md={12}>
           <Card border="light" className="shadow-sm mb-4">
             <Card.Header className="bg-secondary text-center">
-              <h5 className="mb-0">Your Line Chart</h5>
+              <h5 className="mb-0">區域案廠發電量比較趨勢圖</h5>
             </Card.Header>
             <Card.Body>
               <ApexChart
@@ -285,7 +291,7 @@ const Charts = () => {
         <Col xs={12} md={12}>
           <Card border="light" className="shadow-sm mb-4">
             <Card.Header className="bg-secondary text-center">
-              <h5 className="mb-0">Combined Line and Bar Chart</h5>
+              <h5 className="mb-0">個別案場分析圖</h5>
             </Card.Header>
             <Card.Body>
               <ApexChart

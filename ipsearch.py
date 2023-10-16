@@ -25,7 +25,7 @@ app.add_middleware(
 @app.post("/download/")
 async def download_csv(request: Request):
     data = await request.json()
-    
+    print(data)
     selected_values = data.get("selected_values", [])
 
     # 将查询参数转换为 Pandas DataFrame
@@ -42,7 +42,7 @@ async def download_csv(request: Request):
 
     # 发送 CSV 字节流给前端
     response = Response(content=csv_io.getvalue())
-    response.headers["Content-Disposition"] = "attachment; filename=example.csv"
+    response.headers["Content-Disposition"] = f"attachment; filename=example.csv"
     response.headers["Content-Type"] = "text/csv"
 
     return response
@@ -57,9 +57,9 @@ async def people():
     data=[
       {
         "id": 0,
-        "name": "Anna",
-        "email": "12345",
-        "POSITION": "BOSS",
+        "name": "Wang",
+        "email": "Wang@example.com",
+        "POSITION": "Developer",
         "CREATED_AT": "2023-07-10"
       },
       {

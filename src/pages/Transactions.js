@@ -12,11 +12,11 @@ export default () => {
         <div className="d-block mb-4 mb-md-0">
           <Breadcrumb className="d-none d-md-inline-block" listProps={{ className: "breadcrumb-dark breadcrumb-transparent" }}>
             <Breadcrumb.Item><FontAwesomeIcon icon={faHome} /></Breadcrumb.Item>
-            <Breadcrumb.Item>Volt</Breadcrumb.Item>
-            <Breadcrumb.Item active>Transactions</Breadcrumb.Item>
+            <Breadcrumb.Item>Case</Breadcrumb.Item>
+            <Breadcrumb.Item active>Total</Breadcrumb.Item>
           </Breadcrumb>
-          <h4>Transactions</h4>
-          <p className="mb-0">Your web analytics dashboard template.</p>
+          <h4>Case Summary</h4>
+          <p className="mb-0">Case analytics page.</p>
         </div>
         <div className="btn-toolbar mb-2 mb-md-0">
           <ButtonGroup>

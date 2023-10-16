@@ -278,15 +278,15 @@ export const ProgressTrackWidget = () => {
   return (
     <Card border="light" className="shadow-sm">
       <Card.Header className="border-bottom border-light">
-        <h5 className="mb-0">Progress track</h5>
+        <h5 className="mb-0">區域案廠發電量佔比(Top 5)</h5>
       </Card.Header>
       <Card.Body>
 
-        <Progress title="Rocket - SaaS Template" color="purple" icon={faBootstrap} percentage={34} />
-        <Progress title="Pixel - Design System" color="danger" icon={faAngular} percentage={60} />
-        <Progress title="Spaces - Listings Template" color="tertiary" icon={faVuejs} percentage={45} />
-        <Progress title="Stellar - Dashboard" color="info" icon={faReact} percentage={35} />
-        <Progress last title="Volt - Dashboard" color="purple" icon={faBootstrap} percentage={34} />
+        <Progress title="北區案場1" color="purple" icon={faBolt} percentage={35} />
+        <Progress title="北區案場2" icon={faBolt} percentage={30} />
+        <Progress title="北區案場3" color="tertiary" icon={faBolt} percentage={20} />
+        <Progress title="北區案場4" color="info" icon={faBolt} percentage={10} />
+        <Progress last title="北區案場5" color="secondary" icon={faBolt} percentage={7} />
       </Card.Body>
     </Card>
   );

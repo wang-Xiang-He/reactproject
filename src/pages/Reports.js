@@ -20,9 +20,9 @@ import "react-dual-listbox/lib/react-dual-listbox.css";
 const Duallist = () => {
   const [selected, setSelected] = useState([]);
   const options = [
-    { label: "Option 1", value: "1" },
-    { label: "Option 2", value: "2" },
-    { label: "Option 3", value: "3" },
+    { label: "北區案場", value: "北區案場" },
+    { label: "中區案場", value: "中區案場" },
+    { label: "南區案場", value: "南區案場" },
     // Other options...
   ];
 
@@ -43,7 +43,7 @@ const Duallist = () => {
   
     const requestData = { selected_values: selected };
   
-    fetch("http://10.3.50.104:3001/download/", {
+    fetch("http://127.0.0.1:3001/download/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -53,6 +53,7 @@ const Duallist = () => {
       .then(response => {
         if (response.ok) {
           console.log("已成功發送選項到服務器");
+          console.log(response);
           return response.blob(); // 將響應體作為 Blob 對象返回
         } else {
           console.error("服務器響應異常:", response.statusText);
@@ -91,7 +92,7 @@ const Duallist = () => {
             <Breadcrumb.Item active>Reports</Breadcrumb.Item>
           </Breadcrumb>
           <h4>Reports</h4>
-          <p className="mb-0">Your web analytics dashboard template.</p>
+          <p className="mb-0">Your web analytics reports.</p>
 
         </div>
     <Row className="justify-content-md-center">
@@ -108,7 +109,7 @@ const Duallist = () => {
       />
       </Card.Body>
       <Row className="mt-3 align-items-center">
-        <Button variant="primary" onClick={handleLogSelectedItems}>輸出所選項目</Button>
+        <Button variant="primary" onClick={handleLogSelectedItems}>下載</Button>
       </Row>
     </Card>
     </Row>
