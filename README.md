@@ -6,7 +6,7 @@
 [![GitHub issues open](https://img.shields.io/github/issues/themesberg/volt-react-dashboard.svg)](https://github.com/themesberg/volt-react-dashboard/issues?q=is%3Aopen+is%3Aissue)
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/themesberg/volt-react-dashboard.svg)](https://github.com/themesberg/volt-react-dashboard/issues?q=is%3Aissue+is%3Aclosed) -->
 
-[![Volt React Dashboard Bootstrap 5](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-react-dashboard/thumbnail.png)](https://demo.themesberg.com/volt-react-dashboard)
+[![ React Dashboard Bootstrap 5](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-react-dashboard/thumbnail.png)](https://demo.themesberg.com/volt-react-dashboard)
 
 Volt React is a free and open source admin dashboard template built in React.js and based on the latest version of the Bootstrap 5 CSS framework. It features over 100 UI elements, plugins, and example based built with React components.
 
