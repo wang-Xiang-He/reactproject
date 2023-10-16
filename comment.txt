@@ -4,6 +4,7 @@ npm install -g json-server
 npm install json-server
 
 set NODE_OPTIONS=--openssl-legacy-provider
+export NODE_OPTIONS=--openssl-legacy-provider
 
 npm config set proxy "http://10.3.46.6:3128"
 npm config set https-proxy "http://10.3.46.6:3128"
