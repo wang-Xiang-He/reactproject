@@ -6,7 +6,7 @@
 [![GitHub issues open](https://img.shields.io/github/issues/themesberg/volt-react-dashboard.svg)](https://github.com/themesberg/volt-react-dashboard/issues?q=is%3Aopen+is%3Aissue)
 [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/themesberg/volt-react-dashboard.svg)](https://github.com/themesberg/volt-react-dashboard/issues?q=is%3Aissue+is%3Aclosed) -->
 
-[![ React Dashboard Bootstrap 5](https://www.canva.com/design/DAFxZn1jSYU/c1EBk5IqeiEz27tuaQMnbg/watch?utm_content=DAFxZn1jSYU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)]
+[![ React Dashboard Bootstrap 5](https://drive.google.com/file/d/1oiHMbc9uF_NppTTVDQKBPJsJq4RuBxDS/view?usp=sharing)]
 
 此專案以 Volt React 免費模板為基礎開發，開發包含註冊、登陸、案場資訊總覽、數據可視畫、資料下載 等頁面功能
 
