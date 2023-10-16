@@ -1,87 +1,109 @@
 {
-    "people": [
-      {
-        "id": 0,
-        "name": "Anna",
-        "email": "12345",
-        "POSITION": "BOSS",
-        "CREATED_AT": "2023-07-10"
-      },
-      {
-        "id": 1,
-        "name": "John",
-        "email": "john@example.com",
-        "POSITION": "Employee",
-        "CREATED_AT": "2023-07-30"
-      },
-      {
-        "id": 2,
-        "name": "Emily",
-        "email": "emily@example.com",
-        "POSITION": "Employee",
-        "CREATED_AT": "2023-07-30"
-      },
-      {
-        "id": 3,
-        "name": "Michael",
-        "email": "michael@example.com",
-        "POSITION": "Manager",
-        "CREATED_AT": "2023-07-30"
-      },
-      {
-        "id": 4,
-        "name": "Sarah",
-        "email": "sarah@example.com",
-        "POSITION": "Employee",
-        "CREATED_AT": "2023-07-30"
-      },
-      {
-        "id": 5,
-        "name": "David",
-        "email": "david@example.com",
-        "POSITION": "Employee",
-        "CREATED_AT": "2023-07-30"
-      },
-      {
-        "id": 6,
-        "name": "Jessica",
-        "email": "jessica@example.com",
-        "POSITION": "Employee",
-        "CREATED_AT": "2023-07-30"
-      },
-      {
-        "id": 7,
-        "name": "Daniel",
-        "email": "daniel@example.com",
-        "POSITION": "Employee",
-        "CREATED_AT": "2023-07-30"
-      },
-      {
-        "id": 8,
-        "name": "Sophia",
-        "email": "sophia@example.com",
-        "POSITION": "Employee",
-        "CREATED_AT": "2023-07-30"
-      },
-      {
-        "id": 9,
-        "name": "William",
-        "email": "william@example.com",
-        "POSITION": "Employee",
-        "CREATED_AT": "2023-07-30"
-      }
-    ],
-
-    "users": [
-      { "id": 1, "username": "123456", "password": "123456" },
-      { "id": 2, "username": "123", "password": "123" }
-    ],
-
-
-    "series": 
-      {
-        "data": [50, 40, 105, 150, 459, 640, 780, 981, 122]
-      }
-    
+  "people": [
+    {
+      "id": 0,
+      "name": "Anna",
+      "email": "12345",
+      "POSITION": "BOSS",
+      "CREATED_AT": "2023-07-10"
+    },
+    {
+      "id": 1,
+      "name": "John",
+      "email": "john@example.com",
+      "POSITION": "Employee",
+      "CREATED_AT": "2023-07-30"
+    },
+    {
+      "id": 2,
+      "name": "Emily",
+      "email": "emily@example.com",
+      "POSITION": "Employee",
+      "CREATED_AT": "2023-07-30"
+    },
+    {
+      "id": 3,
+      "name": "Michael",
+      "email": "michael@example.com",
+      "POSITION": "Manager",
+      "CREATED_AT": "2023-07-30"
+    },
+    {
+      "id": 4,
+      "name": "Sarah",
+      "email": "sarah@example.com",
+      "POSITION": "Employee",
+      "CREATED_AT": "2023-07-30"
+    },
+    {
+      "id": 5,
+      "name": "David",
+      "email": "david@example.com",
+      "POSITION": "Employee",
+      "CREATED_AT": "2023-07-30"
+    },
+    {
+      "id": 6,
+      "name": "Jessica",
+      "email": "jessica@example.com",
+      "POSITION": "Employee",
+      "CREATED_AT": "2023-07-30"
+    },
+    {
+      "id": 7,
+      "name": "Daniel",
+      "email": "daniel@example.com",
+      "POSITION": "Employee",
+      "CREATED_AT": "2023-07-30"
+    },
+    {
+      "id": 8,
+      "name": "Sophia",
+      "email": "sophia@example.com",
+      "POSITION": "Employee",
+      "CREATED_AT": "2023-07-30"
+    },
+    {
+      "id": 9,
+      "name": "William",
+      "email": "william@example.com",
+      "POSITION": "Employee",
+      "CREATED_AT": "2023-07-30"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "123456",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "username": "123",
+      "password": "123"
+    }
+  ],
+  "series": {
+    "data": [
+      50,
+      40,
+      105,
+      150,
+      459,
+      640,
+      780,
+      981,
+      122
+    ]
+  },
+  "download": {
+    "selected_values": [
+      "北區案場",
+      "中區案場",
+      "南區案場"
+    ]
+  },
+  "login": {
+    "data": []
   }
-  
+}

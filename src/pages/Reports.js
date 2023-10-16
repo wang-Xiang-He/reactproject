@@ -43,10 +43,10 @@ const Duallist = () => {
   
     const requestData = { selected_values: selected };
   
-    fetch("http://127.0.0.1:3001/download/", {
+    fetch("http://localhost:3001/download", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json ",
       },
       body: JSON.stringify(requestData),
     })
