@@ -56,7 +56,7 @@
     "simplebar-react": "^2.3.0"
   },
   "scripts": {
-    "start": "export NODE_OPTIONS=--openssl-legacy-provider && PORT=8080 HOST=0.0.0.0 react-scripts start --host 0.0.0.0",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && PORT=8080 HOST=0.0.0.0 react-scripts start",
     "build": "react-scripts build",
     "build-local": "PUBLIC_URL=./ react-scripts build",
     "test": "react-scripts test",
