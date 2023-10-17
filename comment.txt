@@ -6,8 +6,8 @@ npm install json-server
 set NODE_OPTIONS=--openssl-legacy-provider
 export NODE_OPTIONS=--openssl-legacy-provider
 
-npm config set proxy "http://10.3.46.6:3128"
-npm config set https-proxy "http://10.3.46.6:3128"
+npm config set proxy "http://10.3.3.109:80"
+npm config set https-proxy "http://10.3.3.109:80"
 
 npm config set proxy "http://tpisa:80"
 npm config set https-proxy "https://tpisa:80"
@@ -17,3 +17,7 @@ npm install --legacy-peer-deps
 node server.js
 
 npm run start
+
+
+npm config set registry http://registry.npmjs.org/
+npm config set strict-ssl false
