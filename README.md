@@ -4,7 +4,7 @@
 # 頁面總覽
 ![ React Dashboard Bootstrap 5](https://drive.google.com/uc?export=view&id=1oiHMbc9uF_NppTTVDQKBPJsJq4RuBxDS)
 
-##此專案以 Volt React 免費模板為基礎開發，開發包含註冊、登陸、案場資訊總覽、數據可視化、資料下載 等頁面功能，頁面架設在免費伺服器render上: https://react-dashboard-fdln.onrender.com
+##此專案以 Volt React 免費模板為基礎開發，開發包含註冊、登陸、案場資訊總覽、數據可視化、資料下載 等頁面功能，頁面架設在免費伺服器render上: https://solar-react-dashboard.onrender.com/#/
 
 
 | Dashboard | Users | Charts | Report Download|
@@ -19,5 +19,5 @@
 | --- | --- | --- | --- |
 | ![Lock Profile](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-react-dashboard/github/lock.jpg)| ![404 Not Found](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-react-dashboard/github/404.jpg) | ![500 Server Error](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-react-dashboard/github/500.jpg) | ![Documentation](https://themesberg.s3.us-east-2.amazonaws.com/public/products/volt-pro-react-dashboard/github/docs.jpg)
 
--   [Live Demo](https://demo.themesberg.com/volt-react-dashboard)
+-   [Live Demo](https://solar-react-dashboard.onrender.com/#/)
 
