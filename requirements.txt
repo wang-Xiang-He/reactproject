@@ -18,9 +18,7 @@ gunicorn==21.2.0
 h11==0.14.0
 idna==3.4
 josepy==1.13.0
-numpy==1.25.2
 packaging==23.1
-pandas==2.0.3
 parsedatetime==2.6
 pip==23.1.2
 pycparser==2.21
