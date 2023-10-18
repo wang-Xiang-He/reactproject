@@ -43,7 +43,7 @@ const Duallist = () => {
   
     const requestData = { selected_values: selected };
   
-    fetch("http://localhost:3001/download", {
+    fetch("https://fastapi-server-phjl.onrender.com/download", {
       method: "POST",
       headers: {
         "Content-Type": "application/json ",

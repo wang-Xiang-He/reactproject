@@ -14,7 +14,7 @@ const Users = () => {
     const [searchKeyword, setSearchKeyword] = useState(""); // 搜尋關鍵字
 
     useEffect(() => {
-        fetch("http://localhost:3001/people")
+        fetch("https://fastapi-server-phjl.onrender.com/people")
             .then((response) => response.json())
             .then((data) => {
                 if (data) {
