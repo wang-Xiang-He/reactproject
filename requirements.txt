@@ -1,7 +1,6 @@
 acme==2.6.0
 aiofiles==23.1.0
 anyio==3.6.2
-APScheduler==3.10.1
 certifi==2023.7.22
 cffi==1.15.1
 charset-normalizer==3.2.0
